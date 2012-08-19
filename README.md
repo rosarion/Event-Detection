@@ -37,4 +37,4 @@ Take a look in `scripts` folder.
 ## At work
 This algorithm is currently running in our server. Visit [eventdetection.marcosero.com](http://eventdetection.marcosero.com) to view my project.
 
-![](screenshot.png)
+![](https://raw.github.com/MarcoSero/Event-Detection/master/screenshot.png)
