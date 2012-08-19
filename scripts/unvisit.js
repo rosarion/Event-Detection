@@ -1,0 +1,1 @@
+db.points.update( { "_id" : { "$exists" : true } }, { "$set" : { "visited" : false , "clusterized" : false } }, false, true);
