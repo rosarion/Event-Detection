@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Universitˆ degli studi di Torino.
+ * Copyright 2012 Department of Computer Science - University of Turin.
  * Author: Marco Sero
  *
  * Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,6 +1,9 @@
 # An algorithm for Event Detection
 ## DBSCAN Algorithm in Map/Reduce logic, implemented with Hadoop and MongoDB
 
+## The Project
+This project is my thesis work for my bachelor degree at the Department of Computer Science of University of Turin.  
+It would not have been possible without the help and the supervision of [Prof. Giancarlo Ruffo](http://www.di.unito.it/~ruffo/) and the [ARCS group](http://arcs.di.unito.it/).
 
 ## Algorithm
 ### Just a bit of background
