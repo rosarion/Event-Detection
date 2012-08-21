@@ -7,7 +7,7 @@ while(true) {
 	try {
 
 		// Making a Connection
-		$connection = new Mongo('mongodb://msero:edserver@localhost'); // connects to localhost:27017
+		$connection = new Mongo('mongodb://user:password@localhost'); // connects to localhost:27017
 
 		// select a database
 		$db = $connection->p;
@@ -16,7 +16,7 @@ while(true) {
 		// select a collection (analogous to a relational database's table)
 		$collection = $db->points;
 
-		$fp = fopen("http://api.teleportd.com/stream?user_key=34c101a700d5f3296e8ad453e525d600","r");
+		$fp = fopen("http://api.teleportd.com/stream?user_key=API_KEY","r");
 
 		while($data = fgets($fp)) {
 			$json = json_decode($data, true);

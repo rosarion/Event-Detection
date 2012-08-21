@@ -2,14 +2,14 @@
 
 require_once("functions.php");
 
-$username = "marcosero";
+$username = "Event_Detection";
 
 function warning_handler($errno, $errstr) {
 	global $username;
-	if($username == "marcosero")
+	if($username == "Event_Detection")
 		$username = "lifeofadev";
 	else
-		$username = "marcosero";
+		$username = "Event_Detection";
 }
 
 set_error_handler("warning_handler", E_WARNING);
@@ -20,7 +20,7 @@ while(true) {
 	try {
 
 		// Making a Connection
-		$connection = new Mongo('mongodb://msero:edserver@localhost'); // connects to localhost:27017
+		$connection = new Mongo('mongodb://user:password@localhost'); // connects to localhost:27017
 
 		// select a database
 		$db = $connection->p;
@@ -30,7 +30,7 @@ while(true) {
 		$collection = $db->points;
 	
 
-		$fp = fopen("https://$username:eventdetection@stream.twitter.com/1/statuses/filter.json?locations=-180,-90,180,90","r");
+		$fp = fopen("https://$username:password@stream.twitter.com/1/statuses/filter.json?locations=-180,-90,180,90","r");
 
 		while($data = fgets($fp)) {
 		

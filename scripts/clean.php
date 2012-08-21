@@ -5,7 +5,7 @@ require_once("functions.php");
 while (true) {
 	try {
 		// Making a Connection
-		$connection = new Mongo('mongodb://msero:edserver@localhost'); // connects to localhost:27017
+		$connection = new Mongo('mongodb://user:password@localhost'); // connects to localhost:27017
 
 		$p = $connection->p;
 		$e = $connection->e;
