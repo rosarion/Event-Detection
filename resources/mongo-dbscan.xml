@@ -58,8 +58,7 @@
   <property>
     <!-- The query, in JSON, to execute [OPTIONAL] -->
     <name>mongo.input.query</name>
-    <!--<value>{"x": {"$regex": "^eliot", "$options": ""}}</value>-->
-    <value> { visited : false , clusterized : false }</value>
+    <value> { visited : false }</value>
   </property>
   <property>
     <!-- The fields, in JSON, to read [OPTIONAL] -->

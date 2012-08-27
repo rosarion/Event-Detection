@@ -163,9 +163,9 @@ public class DBScanReducer extends Reducer<Text, BSONWritable, Text, BSONWritabl
 						DBCursor nearPoints = collection.find(findNearPoints);
 						
 						if(nearPoints.size() >= minPointsToCreateCluster) {
-							// increase performance by adding only points unvisited OR unclusterized
+							// increase performance by adding only points unvisited
 							// two query BUT much less points to loop
-							findNearPoints.put("$or", new BasicDBObject[] { new BasicDBObject("visited", false), new BasicDBObject("clusterized", false) });
+							findNearPoints.put("visited", false);
 							nearPoints = collection.find(findNearPoints);
 							
 							toMap(neighborPoints, nearPoints.toArray());
@@ -177,12 +177,9 @@ public class DBScanReducer extends Reducer<Text, BSONWritable, Text, BSONWritabl
 				
 					} // end if visited == false
 					
-					if((Boolean)point.get("clusterized") == false) {
-						// add the point to cluster
-						point.put("clusterized", true);
-						pointModified = true;
-						numPoints++;
-					}
+
+					pointModified = true;
+					numPoints++;
 					
 					// update new point in MongoDB
 					if(pointModified)
