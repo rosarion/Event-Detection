@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="libraries/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libraries/commons-logging-api-1.0.4.jar"/>
+	<classpathentry kind="lib" path="libraries/hadoop-core-1.0.3.jar"/>
+	<classpathentry kind="lib" path="libraries/mongo-2.7.3.jar"/>
+	<classpathentry kind="lib" path="libraries/mongo-hadoop-core_1.0.2-1.0.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/Marco/Dropbox/Universita/TerzoAnno/Tesi/dbscan-hadoop/libraries/jcoord-1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

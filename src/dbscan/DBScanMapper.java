@@ -74,7 +74,7 @@ public class DBScanMapper extends Mapper<ObjectId, BSONObject, Text, BSONWritabl
 	}
 	
 	/**
-	 * The map function read the points in input. All points are not visited
+	 * The map function reads the points in input. All points are not visited
 	 * for the input query execute in MongoDb from Hadoop.
 	 * If a point has enought points in neighborhood, then a cluster will be emitted;
 	 * otherwise, do nothing.
