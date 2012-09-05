@@ -13,6 +13,9 @@ A *point* is a tweet or a photo, with an hashtag and a geotag.
 A *cluster* is an event, with a number of points analyzed and a number of neighboring points to analyze.
 
 #### Hadoop
+
+![Hadoop](https://raw.github.com/MarcoSero/Event-Detection/master/images/hadoop.jpg)
+
 I choosed [Hadoop](http://hadoop.apache.org/) to realize Map/Reduce because it is the most widely used framework for this kind of job and it has large documentation.  
 In this way, I don't care about multithreading and multiprocessing and I leave Hadoop this kind of jobs.
 
@@ -20,6 +23,9 @@ The algorithm is running on a server with 16 cores and 32GB of RAM.
 This is my [mapred-site.xml](http://cl.ly/IrX1) if someone cares.
 
 #### MongoDB
+
+![Hadoop](https://raw.github.com/MarcoSero/Event-Detection/master/images/mongodb.png)
+
 After a deep research in many relational and not relational database, [MongoDB](http://www.mongodb.org/) was my choice. It has a great documentation, a powerful support of geolocated queries and it is very scalable.  
 The Mongo-Hadoop plugin let me to integrate it in MongoDB. Its config options are in the file `mongo-dbscan.xml`.
 
@@ -40,4 +46,4 @@ Take a look in `scripts` folder.
 ## At work
 This algorithm is currently running in our server. Visit [eventdetection.marcosero.com](http://eventdetection.marcosero.com) to view my project.
 
-![](https://raw.github.com/MarcoSero/Event-Detection/master/screenshot.png)
+![](https://raw.github.com/MarcoSero/Event-Detection/master/images/screenshot.png)
