@@ -100,13 +100,13 @@ public class DBScanReducer extends Reducer<Text, BSONWritable, Text, BSONWritabl
 	 * @param pContext the context in which map-reduce works
 	 */
     @Override
-    public void reduce( final Text pKey, final Iterable<BSONWritable> pValues, final Context pContext )
+    public void reduce( final Text eventKey, final Iterable<BSONWritable> eventValues, final Context eventContext )
             throws IOException, InterruptedException{
 		
     	//System.out.println("Reducing clusters with key : " + pKey +"...");
     	
 		// get the iterator
-		Iterator<BSONWritable> iterator = pValues.iterator();
+		Iterator<BSONWritable> iterator = eventValues.iterator();
 		
 		// alloc *new* cluster
 		BSONWritable newCluster = new BSONWritable();
@@ -246,7 +246,7 @@ public class DBScanReducer extends Reducer<Text, BSONWritable, Text, BSONWritabl
 		
 		// write to context if and only if the new cluster has enought points
 		if(numPoints > 30)
-			pContext.write( pKey, newCluster );
+			eventContext.write( eventKey, newCluster );
 		
 		newCluster = null;
 		
