@@ -74,10 +74,10 @@ public class DBScanMapper extends Mapper<ObjectId, BSONObject, Text, BSONWritabl
 	}
 	
 	/**
-	 * The map function reads the points in input. All points are not visited
+	 * The map function read the points in input. All points are not read and not clusterized
 	 * for the input query execute in MongoDb from Hadoop.
-	 * If a point has enought points in neighborhood, then a cluster will be emitted;
-	 * otherwise, do nothing.
+	 * If a point has enought points in neighborhood, then a cluster will be emitted and the
+	 * point is marked as clusterized; otherwise, do nothing.
 	 *
 	 * @param pointKey the key of the point in input
 	 * @param pointValue the point in input, in BSON (binary JSon)
@@ -107,6 +107,9 @@ public class DBScanMapper extends Mapper<ObjectId, BSONObject, Text, BSONWritabl
 		
 		// if near points are enough -> create cluster
 		if(nearPoints.count() >= minPointsToCreateCluster) {
+			
+			// mark point as clusterized
+			pointValue.put("clusterized", new Boolean(true));
 			
 			// new cluster
 			BSONWritable newCluster = new BSONWritable();
@@ -165,7 +168,7 @@ public class DBScanMapper extends Mapper<ObjectId, BSONObject, Text, BSONWritabl
 		}
 		
 		// update point in Mongo
-		// the point is now visited
+		// the point is now visited and *maybe clusterized
 		// *maybe because could not be enought points in neighborhood
 		BasicDBObject findOldPoint = new BasicDBObject("_id", pointValue.get("_id"));
 		BasicDBObject newPoint = new BasicDBObject(pointValue.toMap());
