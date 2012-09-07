@@ -67,7 +67,7 @@ public class DBScanMapper extends Mapper<ObjectId, BSONObject, Text, BSONWritabl
 		super();
 		m = new Mongo();
 		db = m.getDB( "p" );
-		boolean auth = db.authenticate("msero", "edserver".toCharArray());
+		boolean auth = db.authenticate("username", "password".toCharArray());
 		if(!auth)
 			throw new RuntimeException("Login error");
 		collection = db.getCollection("points");

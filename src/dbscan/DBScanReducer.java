@@ -83,8 +83,9 @@ public class DBScanReducer extends Reducer<Text, BSONWritable, Text, BSONWritabl
 		super();
 		m = new Mongo();
 		db = m.getDB( "p" );
-		boolean auth = db.authenticate("msero", "edserver".toCharArray());
-		if(!auth) throw new RuntimeException("Login error");
+		boolean auth = db.authenticate("username", "password".toCharArray());
+		if(!auth)
+			throw new RuntimeException("Login error");
 		collection = db.getCollection("points");
 	}
 

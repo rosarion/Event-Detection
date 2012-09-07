@@ -20,7 +20,7 @@ while(true) {
 	try {
 
 		// Making a Connection
-		$connection = new Mongo('mongodb://user:password@localhost'); // connects to localhost:27017
+		$connection = new Mongo('mongodb://user:password@localhost/p'); // connects to localhost:27017
 
 		// select a database
 		$db = $connection->p;
